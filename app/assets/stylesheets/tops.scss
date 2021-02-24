@@ -1,0 +1,60 @@
+// Place all the styles related to the tops controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.index-title-box{
+background-color: rgb(238, 238, 245);
+width: 100vw;
+height: 150px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.index-title{
+  
+  width: 140vh;
+  
+  text-align: center;
+  font-size: 30px;  
+}
+.question-wrapper{
+  
+  
+}
+.q{
+  background-color: rgb(238, 238, 245);
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.q-title{
+  background-color:white;
+  width: 70vw;
+  text-decoration: none;
+  text-align: center;
+  font-size: 30px;  
+}
+
+.q2{
+  background-color: yellow;
+  width: 100vw;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.q2-title{
+  background-color:white;
+  width: 140vh;
+  
+  text-align: center;
+  font-size: 30px;  
+
+}
+
+
+
