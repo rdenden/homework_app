@@ -8,7 +8,12 @@ class QuestionsController < ApplicationController
   def index_a1
   end
   
-  def create
-    binding.pry
+  def create  
   end
+  
+  def show
+  end
+
+  
+
 end
