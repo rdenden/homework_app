@@ -4,42 +4,78 @@
     </div>
 </div>
 <div class ='question-wrapper'>
-  <%= form_with url: questions_path, local: true do |form| %>
-
+  
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[0]} ＋ #{nums[1]} =" %>
-      <%= form.text_field :answer1 %>
+      問１：　
+      <% if "#{$sum1.answer}" == @answer1 %>
+      <%= "正解" %>
+      <% else %>
+      <%= "不正解"%>
+      <% end %>
+      　
+      <%= "#{$sum1.text} = #{$sum1.answer} " %>
+      <%= "あなたの答え: #{@answer1}" %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[2]} ＋ #{nums[3]} =" %>
-      <%= form.text_field :answer2%>
+      問２：　
+      <% if "#{$sum2.answer}" == @answer2 %>
+      <%= "正解" %>
+      <% else %>
+      <%= "不正解"%>
+      <% end %>
+      　
+      <%= "#{$sum2.text} = #{$sum2.answer} "  %>
+      <%= "あなたの答え: #{@answer2}"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[4]} ＋ #{nums[5]} ="%>
-      <%= form.text_field :answer3 %>
+      問３：
+      <% if "#{$sum3.answer}" == @answer3 %>
+      <%= "正解" %>
+      <% else %>
+      <%= "不正解"%>
+      <% end %>
+      　
+      <%= "#{$sum3.text} = #{$sum3.answer} "  %>
+      <%= "あなたの答え: #{@answer3}"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[6]} ＋ #{nums[7]} =" %>
-      <%= form.text_field :answer4 %>
+      問４：
+      <% if "#{$sum4.answer}" == @answer4 %>
+      <%= "正解" %>
+      <% else %>
+      <%= "不正解"%>
+      <% end %>
+      　
+      <%= "#{$sum4.text} = #{$sum4.answer} " %>
+      <%= "あなたの答え: #{@answer4}"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[8]} ＋ #{nums[9]} =" %>
-      <%= form.text_field :answer5 %>
+      問５：　
+      <% if "#{$sum5.answer}" == @answer5 %>
+      <%= "正解" %>
+      <% else %>
+      <%= "不正解"%>
+      <% end %>
+      　
+      <%= "#{$sum5.text} = #{$sum5.answer} "  %>
+      <%= "あなたの答え: #{@answer5}"%>
       </div>
     </div> 
+    <div class='q'>
+      <div class='q-title'>
+      あなたの得点は<%= @count %>/5点です
+      </div>
+    </div> 
+    
 
-    <div class="answer-submit">
-      <%= form.submit "解答する" ,class:"answer-button" %>
-      
-    </div>
-  <% end %>
+    
 </div>

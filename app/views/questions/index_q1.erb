@@ -1,17 +1,3 @@
-<% nums = []%>
-<% 10.times do  %>
-  <% nums << rand(9)+1 %>
-<% end %>
-<% ans1 = nums[0]+nums[1] %>
-<% ans2 = nums[2]+nums[3] %>
-<% ans3 = nums[4]+nums[5] %>
-<% ans4 = nums[6]+nums[7] %>
-<% ans5 = nums[8]+nums[9] %>
-
-
-
-
-
 
 
 
@@ -25,31 +11,36 @@
 
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[0]} ＋ #{nums[1]} =" %>
+      問１：　
+      <%= $sum1.text %>
       <%= form.text_field :answer1 %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[2]} ＋ #{nums[3]} =" %>
+      問２：　
+      <%= $sum2.text %>
       <%= form.text_field :answer2%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[4]} ＋ #{nums[5]} ="%>
+      問３：　
+      <%= $sum3.text%>
       <%= form.text_field :answer3 %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[6]} ＋ #{nums[7]} =" %>
+      問４：　
+      <%= $sum4.text %>
       <%= form.text_field :answer4 %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
-      <%= "#{nums[8]} ＋ #{nums[9]} =" %>
+      問５：　
+      <%= $sum5.text %>
       <%= form.text_field :answer5 %>
       </div>
     </div> 
@@ -60,5 +51,3 @@
     </div>
   <% end %>
 </div>
-
-<%= maker1 %>
