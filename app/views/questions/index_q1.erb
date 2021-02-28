@@ -12,41 +12,48 @@
     <div class='q'>
       <div class='q-title'>
       問１：　
-      <%= $sum1.text %>
-      <%= form.text_field :answer1 %>
+      <%= $sum1.text %> =
+      
+      <%= form.text_field :answer1 ,class:'answer-form', placeholder:"入力欄"%>
+     
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問２：　
-      <%= $sum2.text %>
-      <%= form.text_field :answer2%>
+      <%= $sum2.text %> =
+      <%= form.text_field :answer2 ,class:'answer-form', placeholder:"入力欄"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問３：　
-      <%= $sum3.text%>
-      <%= form.text_field :answer3 %>
+      <%= $sum3.text%> =
+      <%= form.text_field :answer3 ,class:'answer-form', placeholder:"入力欄" %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問４：　
-      <%= $sum4.text %>
-      <%= form.text_field :answer4 %>
+      <%= $sum4.text %> =
+      <%= form.text_field :answer4 ,class:'answer-form', placeholder:"入力欄" %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問５：　
-      <%= $sum5.text %>
-      <%= form.text_field :answer5 %>
+      <%= $sum5.text %> =
+      <%= form.text_field :answer5 ,class:'answer-form', placeholder:"入力欄" %>
       </div>
     </div> 
-
-    <div class="answer-submit">
+    
+    <div class='q'>
+      <div class='q-title'>
+      <div class="answer-submit">
       <%= form.submit "解答する" ,class:"answer-button" %>
+      </div>
+    </div> 
+    
       
     </div>
   <% end %>
