@@ -48,7 +48,7 @@ class QuestionsController < ApplicationController
     $sub5 = SubQuestion.new(rand(100..999),rand(100..999))
   end
   
-  def create      
+  def create
     @user_answer1 = params[:answer1]
     @user_answer2 = params[:answer2]
     @user_answer3 = params[:answer3]
@@ -108,7 +108,9 @@ class QuestionsController < ApplicationController
       @text4 = $sub4.text
       @text5 = $sub5.text
     end
-    
+    if user_signed_in?
+      Question.create(question_index: params[:q_id], score: @count, user_id: current_user.id)
+    end
   end
   
   def show
