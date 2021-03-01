@@ -1,16 +1,15 @@
-
 <div class='index-title-box'>
     <div class='index-title'>
       <p>1桁の足し算(半角で入力して下さい)</p>
     </div>
 </div>
 <div class ='question-wrapper'>
-  <%= form_with url: questions_path(q_id:1), local: true do |form| %>
+  <%= form_with url: questions_path(q_id:'5'), local: true do |form| %>
 
     <div class='q'>
       <div class='q-title'>
       問１：　
-      <%= $add1.text %> =
+      <%= $sub1.text %> =
       
       <%= form.text_field :answer1 ,class:'answer-form', placeholder:"入力欄"%>
      
@@ -19,28 +18,28 @@
     <div class='q'>
       <div class='q-title'>
       問２：　
-      <%= $add2.text %> =
+      <%= $sub2.text %> =
       <%= form.text_field :answer2 ,class:'answer-form', placeholder:"入力欄"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問３：　
-      <%= $add3.text%> =
+      <%= $sub3.text%> =
       <%= form.text_field :answer3 ,class:'answer-form', placeholder:"入力欄" %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問４：　
-      <%= $add4.text %> =
+      <%= $sub4.text %> =
       <%= form.text_field :answer4 ,class:'answer-form', placeholder:"入力欄" %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問５：　
-      <%= $add5.text %> =
+      <%= $sub5.text %> =
       <%= form.text_field :answer5 ,class:'answer-form', placeholder:"入力欄" %>
       </div>
     </div> 

@@ -1,6 +1,6 @@
 <div class='index-title-box'>
     <div class='index-title'>
-      <p>一桁の足し算</p>
+      <p>答え合わせ</p>
     </div>
 </div>
 <div class ='question-wrapper'>
@@ -8,74 +8,103 @@
     <div class='q'>
       <div class='q-title'>
       問１：　
-      <% if "#{$sum1.answer}" == @answer1 %>
-      <%= "正解" %>
+      <% if "#{@answer1}" == @user_answer1 %>
+      <div class='true'>
+        <%= "正解" %>
+      </div>      
       <% else %>
-      <%= "不正解"%>
+      <div class='false'>
+        <%= "不正解"%>
+      </div>
       <% end %>
       　
-      <%= "#{$sum1.text} = #{$sum1.answer} " %>
-      <%= "あなたの答え: #{@answer1}" %>
+      <%= "#{@text1} = #{@answer1} " %>
+      <%= "あなたの答え: #{@user_answer1}" %>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問２：　
-      <% if "#{$sum2.answer}" == @answer2 %>
-      <%= "正解" %>
+      <% if "#{@answer2}" == @user_answer2 %>
+      <div class='true'>
+        <%= "正解" %>
+      </div>      
       <% else %>
-      <%= "不正解"%>
+      <div class='false'>
+        <%= "不正解"%>
+      </div>
       <% end %>
       　
-      <%= "#{$sum2.text} = #{$sum2.answer} "  %>
-      <%= "あなたの答え: #{@answer2}"%>
+      <%= "#{@text2} = #{@answer2} "  %>
+      <%= "あなたの答え: #{@user_answer2}"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問３：
-      <% if "#{$sum3.answer}" == @answer3 %>
-      <%= "正解" %>
+      <% if "#{@answer3}" == @user_answer3 %>
+      <div class='true'>
+        <%= "正解" %>
+      </div>      
       <% else %>
-      <%= "不正解"%>
+      <div class='false'>
+        <%= "不正解"%>
+      </div>
       <% end %>
       　
-      <%= "#{$sum3.text} = #{$sum3.answer} "  %>
-      <%= "あなたの答え: #{@answer3}"%>
+      <%= "#{@text3} = #{@answer3} "  %>
+      <%= "あなたの答え: #{@user_answer3}"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問４：
-      <% if "#{$sum4.answer}" == @answer4 %>
-      <%= "正解" %>
+      <% if "#{@answer4}" == @user_answer4 %>
+      <div class='true'>
+        <%= "正解" %>
+      </div>      
       <% else %>
-      <%= "不正解"%>
+      <div class='false'>
+        <%= "不正解"%>
+      </div>
       <% end %>
       　
-      <%= "#{$sum4.text} = #{$sum4.answer} " %>
-      <%= "あなたの答え: #{@answer4}"%>
+      <%= "#{@text4} = #{@answer4} " %>
+      <%= "あなたの答え: #{@user_answer4}"%>
       </div>
     </div>
     <div class='q'>
       <div class='q-title'>
       問５：　
-      <% if "#{$sum5.answer}" == @answer5 %>
-      <%= "正解" %>
+      <% if "#{@answer5}" == @user_answer5 %>
+      <div class='true'>
+        <%= "正解" %>
+      </div>      
       <% else %>
-      <%= "不正解"%>
+      <div class='false'>
+        <%= "不正解"%>
+      </div>
       <% end %>
       　
-      <%= "#{$sum5.text} = #{$sum5.answer} "  %>
-      <%= "あなたの答え: #{@answer5}"%>
+      <%= "#{@text5} = #{@answer5} "  %>
+      <%= "あなたの答え: #{@user_answer5}"%>
       </div>
     </div> 
     <div class='q'>
       <div class='q-title'>
+      <% if @count == 5%>
+        <div class ='true'>
+        おめでとう!!!　　
+        </div>
+      <% end %>
       あなたの得点は<%= @count %>/5点です
       </div>
     </div> 
-    
+    <div class='q'>
+      <div class='q-title'>
+      <%= link_to"トップページに戻る", root_path, class:'back'%>
+      </div>
+    </div>
 
     
 </div>
