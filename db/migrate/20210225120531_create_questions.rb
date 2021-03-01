@@ -1,12 +1,11 @@
 class CreateQuestions < ActiveRecord::Migration[6.0]
   def change
     create_table :questions do |t|
-      t.integer :answer1
-      t.integer :answer2
-      t.integer :answer3
-      t.integer :answer4
-      t.integer :answer5      
+      t.string     :question_index,   null:false
+      t.integer    :score,            null:false
+      t.references :user,             foreign_key:true
       t.timestamps
+      
     end
   end
 end
