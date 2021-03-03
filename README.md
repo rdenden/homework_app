@@ -16,8 +16,11 @@
 #### 問題解答機能
 ![image](https://user-images.githubusercontent.com/75596850/109809007-263fea80-7c6b-11eb-94c4-8a21cc17420c.png)
 #### 答え合わせ
+![image](https://user-images.githubusercontent.com/75596850/109809842-1ecd1100-7c6c-11eb-95d2-bdccc2d51c3e.png)
+#### 成績表示
+![image](https://user-images.githubusercontent.com/75596850/109810118-779ca980-7c6c-11eb-92fe-a344a9a86b5e.png)
 
-#### 投票画面
+
 
 
 
