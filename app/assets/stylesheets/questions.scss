@@ -71,7 +71,7 @@ align-items: center;
   margin: 0 10px;
   text-align: center;
   font-size: 30px;
- 
+  
 }
 
 .true{
@@ -85,6 +85,17 @@ align-items: center;
 }
 .question-index{
   text-decoration: none;
+}
+
+.score-wrapper{
+  display: flex;
+  background-color: yellow;
+
+}
+
+.score-1{
+  background-color: rgb(122, 122, 97);
+  display: flex
 }
 
 @charset "UTF-8";

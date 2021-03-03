@@ -1,0 +1,198 @@
+<div class='index-title-box'>
+  <div class='index-title'>
+    <%= "#{current_user.nickname}さんの成績" %>
+  </div>
+</div>
+<div class='score-wrapper'>
+<div class= 'score-1'>
+問１
+<table border="1">
+    <tr>
+      <th>得点</th>
+      <th>回数</th>
+    </tr>
+    <tr>
+      <td>０点</td>
+      <td><%= "#{@user_questions1_scores[0]}回" %></td>
+    </tr>
+    <tr>
+      <td>１点</td>
+      <td><%= "#{@user_questions1_scores[1]}回" %></td>
+    </tr>
+    <tr>
+      <td>２点</td>
+      <td><%= "#{@user_questions1_scores[2]}回" %></td>
+    </tr>
+    <tr>
+      <td>３点</td>
+      <td><%= "#{@user_questions1_scores[3]}回" %></td>
+    </tr>
+    <tr>
+      <td>４点</td>
+      <td><%= "#{@user_questions1_scores[4]}回" %></td>
+    </tr>
+    <tr>
+      <td>５点</td>
+      <td><%= "#{@user_questions1_scores[5]}回" %></td>
+    </tr>
+    <tr>
+      <td>平均点</td>
+      <td><%= "#{@avg1}点" %></td>
+    </tr>
+</table>
+<div class ="pie_chart" >
+<%= pie_chart Question.group(:score).count %>
+</div>
+</div>
+
+<div class= 'score-２'>
+
+<table border="1">
+ 
+    <tr>
+      <th>得点</th>
+      <th>回数</th>
+    </tr>
+    <tr>
+      <td>０点</td>
+      <td><%= "#{@user_questions2_scores[0]}回" %></td>
+    </tr>
+    <tr>
+      <td>１点</td>
+      <td><%= "#{@user_questions2_scores[1]}回" %></td>
+    </tr>
+    <tr>
+      <td>２点</td>
+      <td><%= "#{@user_questions2_scores[2]}回" %></td>
+    </tr>
+    <tr>
+      <td>３点</td>
+      <td><%= "#{@user_questions2_scores[3]}回" %></td>
+    </tr>
+    <tr>
+      <td>４点</td>
+      <td><%= "#{@user_questions2_scores[4]}回" %></td>
+    </tr>
+    <tr>
+      <td>５点</td>
+      <td><%= "#{@user_questions2_scores[5]}回" %></td>
+    </tr>
+    <tr>
+      <td>平均点</td>
+      <td><%= "#{@avg2}点" %></td>
+    </tr>
+</table>
+</div>
+
+<div class= 'score-3'>
+<table border="1">
+    <tr>
+      <th>得点</th>
+      <th>回数</th>
+    </tr>
+    <tr>
+      <td>０点</td>
+      <td><%= "#{@user_questions3_scores[0]}回" %></td>
+    </tr>
+    <tr>
+      <td>１点</td>
+      <td><%= "#{@user_questions3_scores[1]}回" %></td>
+    </tr>
+    <tr>
+      <td>２点</td>
+      <td><%= "#{@user_questions3_scores[2]}回" %></td>
+    </tr>
+    <tr>
+      <td>３点</td>
+      <td><%= "#{@user_questions3_scores[3]}回" %></td>
+    </tr>
+    <tr>
+      <td>４点</td>
+      <td><%= "#{@user_questions3_scores[4]}回" %></td>
+    </tr>
+    <tr>
+      <td>５点</td>
+      <td><%= "#{@user_questions3_scores[5]}回" %></td>
+    </tr>
+    <tr>
+      <td>平均点</td>
+      <td><%= "#{@avg3}点" %></td>
+    </tr>
+ </table>
+ </div>
+
+<div class= 'score-4'>
+<table border="1">
+    <tr>
+      <th>得点</th>
+      <th>回数</th>
+    </tr>
+    <tr>
+      <td>０点</td>
+      <td><%= "#{@user_questions4_scores[0]}回" %></td>
+    </tr>
+    <tr>
+      <td>１点</td>
+      <td><%= "#{@user_questions4_scores[1]}回" %></td>
+    </tr>
+    <tr>
+      <td>２点</td>
+      <td><%= "#{@user_questions4_scores[2]}回" %></td>
+    </tr>
+    <tr>
+      <td>３点</td>
+      <td><%= "#{@user_questions4_scores[3]}回" %></td>
+    </tr>
+    <tr>
+      <td>４点</td>
+      <td><%= "#{@user_questions4_scores[4]}回" %></td>
+    </tr>
+    <tr>
+      <td>５点</td>
+      <td><%= "#{@user_questions4_scores[5]}回" %></td>
+    </tr>
+    <tr>
+      <td>平均点</td>
+      <td><%= "#{@avg4}点" %></td>
+    </tr>
+ </table>
+ </div>
+
+<div class= 'score-5'>
+<table border="1">
+    <tr>
+      <th>得点</th>
+      <th>回数</th>
+    </tr>
+    <tr>
+      <td>０点</td>
+      <td><%= "#{@user_questions5_scores[0]}回" %></td>
+    </tr>
+    <tr>
+      <td>１点</td>
+      <td><%= "#{@user_questions5_scores[1]}回" %></td>
+    </tr>
+    <tr>
+      <td>２点</td>
+      <td><%= "#{@user_questions5_scores[2]}回" %></td>
+    </tr>
+    <tr>
+      <td>３点</td>
+      <td><%= "#{@user_questions5_scores[3]}回" %></td>
+    </tr>
+    <tr>
+      <td>４点</td>
+      <td><%= "#{@user_questions5_scores[4]}回" %></td>
+    </tr>
+    <tr>
+      <td>５点</td>
+      <td><%= "#{@user_questions5_scores[5]}回" %></td>
+    </tr>
+    <tr>
+      <td>平均点</td>
+      <td><%= "#{@avg5}点" %></td>
+    </tr>
+</table>
+</div>
+</div>
+

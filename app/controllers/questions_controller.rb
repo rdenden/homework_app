@@ -114,8 +114,100 @@ class QuestionsController < ApplicationController
   end
   
   def show
+    # 問１の解答データ取得-------------------------------------
+    @user_questions1 = Question.where(user_id: current_user.id,question_index:1)
+    # 各得点の回数を配列に格納
+    @user_questions1_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions1_scores << @user_questions1.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += (@user_questions1.where(score: t).count) * t
+    end
+    # 合計値を全レコード数で除する
+    unless Question.where(user_id: current_user.id,question_index:1).count == 0
+      @avg1 = sum_score / Question.where(user_id: current_user.id,question_index:1).count
+    else
+      @avg1 = 0
+    end
+
+    @user_questions1_recent = Question.where(user_id: current_user.id,question_index:1).order(:created_time).limit(5)
+    
+    # 問２の解答データ取得---------------------------------------
+    @user_questions2 = Question.where(user_id: current_user.id,question_index:2)
+    # 各得点の回数を配列に格納
+    @user_questions2_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions2_scores << @user_questions2.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += (@user_questions2.where(score: t).count) * t
+    end
+    # 合計値を全レコード数で除する
+    unless Question.where(user_id: current_user.id,question_index:1).count ==  0
+      @avg2 = sum_score / Question.where(user_id: current_user.id,question_index:2).count
+    else
+      @avg2 = 0
+    end
+    @user_questions2_recent = Question.where(user_id: current_user.id,question_index:2).order(:created_time).limit(5)
+
+    # 問３の解答データ取得------------------------------------------
+    @user_questions3 = Question.where(user_id: current_user.id,question_index:3)
+    # 各得点の回数を配列に格納
+    @user_questions3_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions3_scores << @user_questions3.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += (@user_questions3.where(score: t).count) * t
+    end
+    # 合計値を全レコード数で除する
+    unless Question.where(user_id: current_user.id,question_index:3).count == 0
+      @avg3 = sum_score / Question.where(user_id: current_user.id,question_index:3).count
+    else
+      @avg3 = 0
+    end
+    @user_questions3_recent = Question.where(user_id: current_user.id,question_index:3).order(:created_time).limit(5)
+
+    # 問4の解答データ取得----------------------------------------------
+    @user_questions4 = Question.where(user_id: current_user.id,question_index:4)
+    # 各得点の回数を配列に格納
+    @user_questions4_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions4_scores << @user_questions4.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += (@user_questions4.where(score: t).count) * t
+    end
+    # 合計値を全レコード数で除する
+    unless Question.where(user_id: current_user.id,question_index:4).count == 0
+      @avg4 = sum_score / Question.where(user_id: current_user.id,question_index:4).count
+    else
+      @avg4 = 0
+    end
+    @user_questions4_recent = Question.where(user_id: current_user.id,question_index:4).order(:created_time).limit(5)
+
+    # 問5の解答データ取得------------------------------------------------
+    @user_questions5 = Question.where(user_id: current_user.id,question_index:5)
+    # 各得点の回数を配列に格納
+    @user_questions5_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions5_scores << @user_questions5.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += (@user_questions5.where(score: t).count) * t
+    end
+    # 合計値を全レコード数で除する
+    unless Question.where(user_id: current_user.id,question_index:5).count == 0
+      @avg5 = sum_score / Question.where(user_id: current_user.id,question_index:5).count
+    else
+      @avg5 = 0
+    end
+    @user_questions5_recent = Question.where(user_id: current_user.id,question_index:5).order(:created_time).limit(5)    
   end
-
-  
-
 end
