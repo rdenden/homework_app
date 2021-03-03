@@ -127,7 +127,7 @@ class QuestionsController < ApplicationController
     end
     # 合計値を全レコード数で除する
     unless Question.where(user_id: current_user.id,question_index:1).count == 0
-      @avg1 = sum_score / Question.where(user_id: current_user.id,question_index:1).count
+      @avg1 = sprintf("%.2f", sum_score / Question.where(user_id: current_user.id,question_index:1).count.to_f)
     else
       @avg1 = 0
     end
@@ -147,7 +147,7 @@ class QuestionsController < ApplicationController
     end
     # 合計値を全レコード数で除する
     unless Question.where(user_id: current_user.id,question_index:1).count ==  0
-      @avg2 = sum_score / Question.where(user_id: current_user.id,question_index:2).count
+      @avg2 = sprintf("%.2f", sum_score / Question.where(user_id: current_user.id,question_index:2).count.to_f)
     else
       @avg2 = 0
     end
@@ -166,7 +166,7 @@ class QuestionsController < ApplicationController
     end
     # 合計値を全レコード数で除する
     unless Question.where(user_id: current_user.id,question_index:3).count == 0
-      @avg3 = sum_score / Question.where(user_id: current_user.id,question_index:3).count
+      @avg3 = sprintf("%.2f", sum_score / Question.where(user_id: current_user.id,question_index:3).count.to_f)
     else
       @avg3 = 0
     end
@@ -185,7 +185,7 @@ class QuestionsController < ApplicationController
     end
     # 合計値を全レコード数で除する
     unless Question.where(user_id: current_user.id,question_index:4).count == 0
-      @avg4 = sum_score / Question.where(user_id: current_user.id,question_index:4).count
+      @avg4 = sprintf("%.2f", sum_score / Question.where(user_id: current_user.id,question_index:4).count.to_f)
     else
       @avg4 = 0
     end
@@ -204,10 +204,30 @@ class QuestionsController < ApplicationController
     end
     # 合計値を全レコード数で除する
     unless Question.where(user_id: current_user.id,question_index:5).count == 0
-      @avg5 = sum_score / Question.where(user_id: current_user.id,question_index:5).count
+      @avg5 = sprintf("%.2f", sum_score / Question.where(user_id: current_user.id,question_index:5).count.to_f)
     else
       @avg5 = 0
     end
-    @user_questions5_recent = Question.where(user_id: current_user.id,question_index:5).order(:created_time).limit(5)    
+    @user_questions5_recent = Question.where(user_id: current_user.id,question_index:5).order(:created_time).limit(5)
+    
+    # 問題6の解答データ取得----------------------------------------------
+    @user_questions6 = Question.where(user_id: current_user.id,question_index:6)
+    # 各得点の回数を配列に格納
+    @user_questions6_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions6_scores << @user_questions6.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += (@user_questions6.where(score: t).count) * t
+    end
+    # 合計値を全レコード数で除する
+    unless Question.where(user_id: current_user.id,question_index:4).count == 0
+      @avg6 = sprintf("%.2f", sum_score / Question.where(user_id: current_user.id,question_index:6).count.to_f)
+    else
+      @avg6 = 0
+    end
+    @user_questions6_recent = Question.where(user_id: current_user.id,question_index:6).order(:created_time).limit(5)
+
   end
 end
