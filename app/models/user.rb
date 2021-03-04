@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :nickname, presence: true 
   
-  has_many :scores
+  has_many :questions
 end
 
