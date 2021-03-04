@@ -239,7 +239,7 @@ class QuestionsController < ApplicationController
     # 点数の合計値
     sum_score = 0
     6.times do |t|
-      @user_questions7_scores << @user_questions6.where(score: t).count
+      @user_questions7_scores << @user_questions7.where(score: t).count
       # 得点x回数を合計値に追加
       sum_score += @user_questions7.where(score: t).count * t
     end
