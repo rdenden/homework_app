@@ -20,6 +20,14 @@ class SubQuestion
       @answer = b - a
     end
   end
-
   attr_reader :text, :answer
 end
+
+class MulQuestion
+  def initialize(a, b)
+    @text = "#{a} X #{b}"
+    @answer = a * b
+  end
+  attr_reader :text, :answer
+end
+

@@ -280,6 +280,53 @@
       </div>
     </div>
 
+     <div class= 'score-1'>
+      <div class= 'score-1-title'>
+        問題７
+      </div>
+      <div class = 'score-1-content'>
+
+        <table border="1">
+          <tr>
+            <th>得点</th>
+            <th>回数</th>
+          </tr>
+          <tr>
+            <td>０点</td>
+            <td><%= "#{@user_questions7_scores[0]}回" %></td>
+          </tr>
+          <tr>
+            <td>１点</td>
+            <td><%= "#{@user_questions7_scores[1]}回" %></td>
+          </tr>
+          <tr>
+            <td>２点</td>
+            <td><%= "#{@user_questions7_scores[2]}回" %></td>
+          </tr>
+          <tr>
+            <td>３点</td>
+            <td><%= "#{@user_questions7_scores[3]}回" %></td>
+          </tr>
+          <tr>
+          <td>４点</td>
+            <td><%= "#{@user_questions7_scores[4]}回" %></td>
+          </tr>
+          <tr>
+            <td>５点</td>
+            <td><%= "#{@user_questions7_scores[5]}回" %></td>
+          </tr>
+          <tr>
+            <td>平均点</td>
+            <td><%= "#{@avg7}点" %></td>
+          </tr>
+        </table>
+        <div class ="pie_chart" >
+          <%= pie_chart Question.where(user_id: current_user.id,question_index:7).group(:score).count %>
+        </div>
+      </div>
+    </div>
+
+
 
 
 

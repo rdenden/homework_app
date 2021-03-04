@@ -49,6 +49,14 @@ class QuestionsController < ApplicationController
     $sub5 = SubQuestion.new(rand(100..999), rand(100..999))
   end
 
+  def index_q7
+    $mul1 = MulQuestion.new(rand(1..9),rand(10..99))
+    $mul2 = MulQuestion.new(rand(1..9),rand(10..99))
+    $mul3 = MulQuestion.new(rand(1..9),rand(10..99))
+    $mul4 = MulQuestion.new(rand(1..9),rand(10..99))
+    $mul5 = MulQuestion.new(rand(1..9),rand(10..99))
+  end
+
   def create
     @user_answer1 = params[:answer1]
     @user_answer2 = params[:answer2]
@@ -88,6 +96,22 @@ class QuestionsController < ApplicationController
       @text3 = $sub3.text
       @text4 = $sub4.text
       @text5 = $sub5.text
+    elsif params[:q_id] == '7' || params[:q_id] == '8' || params[:q_id] == '9'
+      @count += 1 if $mul1.answer.to_s == @user_answer1
+      @count += 1 if $mul2.answer.to_s == @user_answer2
+      @count += 1 if $mul3.answer.to_s == @user_answer3
+      @count += 1 if $mul4.answer.to_s == @user_answer4
+      @count += 1 if $mul5.answer.to_s == @user_answer5
+      @answer1 = $mul1.answer
+      @answer2 = $mul2.answer
+      @answer3 = $mul3.answer
+      @answer4 = $mul4.answer
+      @answer5 = $mul5.answer
+      @text1 = $mul1.text
+      @text2 = $mul2.text
+      @text3 = $mul3.text
+      @text4 = $mul4.text
+      @text5 = $mul5.text
     end
     Question.create(question_index: params[:q_id], score: @count, user_id: current_user.id) if user_signed_in?
   end
@@ -207,5 +231,24 @@ class QuestionsController < ApplicationController
               format('%.2f', sum_score / Question.where(user_id: current_user.id, question_index: 6).count.to_f)
             end
     @user_questions6_recent = Question.where(user_id: current_user.id, question_index: 6).order(:created_time).limit(5)
+
+    # 問題7の解答データ取得----------------------------------------------
+    @user_questions7 = Question.where(user_id: current_user.id, question_index: 7)
+    # 各得点の回数を配列に格納
+    @user_questions7_scores = []
+    # 点数の合計値
+    sum_score = 0
+    6.times do |t|
+      @user_questions7_scores << @user_questions6.where(score: t).count
+      # 得点x回数を合計値に追加
+      sum_score += @user_questions7.where(score: t).count * t
+    end
+    # 合計値を全レコード数で除する
+    @avg7 = if Question.where(user_id: current_user.id, question_index: 7).count == 0
+              0
+            else
+              format('%.2f', sum_score / Question.where(user_id: current_user.id, question_index: 7).count.to_f)
+            end
+    @user_questions7_recent = Question.where(user_id: current_user.id, question_index: 7).order(:created_time).limit(5)
   end
 end

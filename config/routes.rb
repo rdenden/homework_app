@@ -9,6 +9,7 @@ Rails.application.routes.draw do
       get 'index_q4'
       get 'index_q5'
       get 'index_q6'
+      get 'index_q7'
     end
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
