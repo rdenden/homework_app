@@ -34,6 +34,7 @@
 # 2 本番環境
 
 ## デプロイ先
+ https://homework33051.herokuapp.com/
 
 
 
@@ -67,4 +68,30 @@
 
 
 # 7 テーブル設計
+## usersテーブル
+
+| Colum           | Type       | Options                        |
+|-----------------|------------|--------------------------------|
+| email           | string     | null: false                    |
+| nickname        | string     | null: false                    |
+| password        | string     | null: false                    |
+
+
+### Association
+
+- has_many :questions
+
+
+## questionsテーブル
+
+| Colum          | Type        | Options                        |
+|----------------|-------------|--------------------------------|
+| question_index | string      | null: false                    |
+| score          | integer     | null: false                    |
+| user_id        | references  | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :users
+
 
