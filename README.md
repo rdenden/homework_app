@@ -92,6 +92,6 @@
 
 ### Association
 
-- belongs_to :users
+- belongs_to :user
 
 
