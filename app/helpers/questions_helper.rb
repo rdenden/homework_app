@@ -1,24 +1,17 @@
 module QuestionsHelper
 end
+
 class AddQuestion
-    
-  def initialize(a,b)
-    @text = "#{a} + #{b}" 
+  def initialize(a, b)
+    @text = "#{a} + #{b}"
     @answer = a + b
   end
-  
-  def text
-    @text
-  end
-  
-  def answer
-    @answer
-  end
+
+  attr_reader :text, :answer
 end
 
 class SubQuestion
-  
-  def initialize(a,b)
+  def initialize(a, b)
     if a >= b
       @text = "#{a} - #{b}"
       @answer = a - b
@@ -28,11 +21,5 @@ class SubQuestion
     end
   end
 
-  def text
-    @text
-  end
-  
-  def answer
-    @answer
-  end
+  attr_reader :text, :answer
 end
