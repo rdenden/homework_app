@@ -59,8 +59,8 @@ rubyの勉強で、クラスやインスタンス、メソッドの作成など�
 # 5 使用技術(開発環境)
 
 * フロントエンド：Html,CSS,javascript
-* バックエンド：Ruby on Rails 6.0.0
-* DB：mysql
+* バックエンド：Ruby on Rails 6.0.3
+* DB：mysql2 0.5.3
 * テスト:RSpec/factory_bot
 
 
