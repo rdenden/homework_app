@@ -28,7 +28,7 @@ class QuestionsController < ApplicationController
   def index_q4
     $sub1 = SubQuestion.new(rand(1..9), rand(1..9))
     $sub2 = SubQuestion.new(rand(1..9), rand(1..9))
-    $sub3 = SubQuestion.new(rand(1..9), rand(0..9))
+    $sub3 = SubQuestion.new(rand(1..9), rand(1..9))
     $sub4 = SubQuestion.new(rand(1..9), rand(1..9))
     $sub5 = SubQuestion.new(rand(1..9), rand(1..9))
   end
